@@ -1,0 +1,157 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|c:\\users\\user\\downloads\\icbfapp\\icbfapp\\pages\\ni\u00F1os\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|solutionrelative:pages\\ni\u00F1os\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|c:\\users\\user\\downloads\\icbfapp\\icbfapp\\services\\generatepdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|solutionrelative:services\\generatepdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|c:\\users\\user\\downloads\\icbfapp\\icbfapp\\pages\\ni\u00F1os\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|solutionrelative:pages\\ni\u00F1os\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|c:\\users\\user\\downloads\\icbfapp\\icbfapp\\pages\\jardines\\crearjardin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|solutionrelative:pages\\jardines\\crearjardin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|c:\\users\\user\\downloads\\icbfapp\\icbfapp\\pages\\jardines\\crearjardin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|solutionrelative:pages\\jardines\\crearjardin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|c:\\users\\user\\downloads\\icbfapp\\icbfapp\\pages\\jardines\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A6B744-9DB0-4811-9B5C-D91B65E3811A}|ICBFApp.csproj|solutionrelative:pages\\jardines\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:989829324:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Ni\u00F1os\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Ni\u00F1os\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Ni\u00F1os\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Ni\u00F1os\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T12:15:10.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Ni\u00F1os\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Ni\u00F1os\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Ni\u00F1os\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Ni\u00F1os\\Index.cshtml.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwCUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T12:08:24.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GeneratePdfService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Services\\GeneratePdfService.cs",
+              "RelativeDocumentMoniker": "Services\\GeneratePdfService.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Services\\GeneratePdfService.cs",
+              "RelativeToolTip": "Services\\GeneratePdfService.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowDwAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T11:57:28.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CrearJardin.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Jardines\\CrearJardin.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Jardines\\CrearJardin.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Jardines\\CrearJardin.cshtml.cs",
+              "RelativeToolTip": "Pages\\Jardines\\CrearJardin.cshtml.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowDwAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T04:38:03.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CrearJardin.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Jardines\\CrearJardin.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Jardines\\CrearJardin.cshtml",
+              "ToolTip": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Jardines\\CrearJardin.cshtml",
+              "RelativeToolTip": "Pages\\Jardines\\CrearJardin.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T04:37:59.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Jardines\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Jardines\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\ICBFApp\\ICBFApp\\Pages\\Jardines\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Jardines\\Index.cshtml.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T04:37:49.277Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

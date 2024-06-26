@@ -1,0 +1,47 @@
+﻿@page
+@model ICBFApp.Pages.Personas.IndexModel
+@{
+}
+<br />
+<h2>Lista de Personas</h2>
+<a class="btn btn-primary btn-sm" href="/Personas/CrearPersona">Nueva Persona</a>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        <strong>@Model.ErrorMessage</strong>
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Identificación</td>
+            <td>Nombre</td>
+            <td>Cédula</td>
+            <td>Teléfono</td>
+            <td>Dirección</td>
+            <td>Correo</td>
+            <td>Rol</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listPersona)
+        {
+            <tr>
+                <td>@item.Identificacion</td>
+                <td>@item.Nombre</td>
+                <td>@item.Cedula</td>
+                <td>@item.Telefono</td>
+                <td>@item.Direccion</td>
+                <td>@item.Correo</td>
+                <td>@item.Rol</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Personas/Edit?identificacion=@item.Identificacion">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="/Personas/Delete?identificacion=@item.Identificacion">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

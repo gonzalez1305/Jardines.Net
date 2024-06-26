@@ -1,0 +1,214 @@
+
+CREATE DATABASE [icbf2]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'icbf_Data', FILENAME = N'C:\SQLData\MSSQL16.SQLEXPRESS\MSSQL\DATA\icbf.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'icbf_Log', FILENAME = N'C:\SQLData\MSSQL16.SQLEXPRESS\MSSQL\DATA\icbf.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [icbf2] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [icbf2].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [icbf2] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [icbf2] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [icbf2] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [icbf2] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [icbf2] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [icbf2] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [icbf2] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [icbf2] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [icbf2] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [icbf2] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [icbf2] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [icbf2] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [icbf2] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [icbf2] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [icbf2] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [icbf2] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [icbf2] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [icbf2] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [icbf2] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [icbf2] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [icbf2] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [icbf2] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [icbf2] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [icbf2] SET  MULTI_USER 
+GO
+ALTER DATABASE [icbf2] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [icbf2] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [icbf2] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [icbf2] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [icbf2] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [icbf2] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [icbf2] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [icbf2] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [icbf2]
+GO
+/****** Object:  Table [dbo].[Jardin]    Script Date: 25/06/2024 18:59:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Jardin](
+	[Identificador] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](100) NULL,
+	[Direccion] [varchar](100) NULL,
+	[Estado] [varchar](20) NULL,
+ CONSTRAINT [PK__Jardin__F2374EB1C81828AD] PRIMARY KEY CLUSTERED 
+(
+	[Identificador] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Niño]    Script Date: 25/06/2024 18:59:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Niño](
+	[NIUP] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](100) NULL,
+	[TipoSangre] [varchar](10) NULL,
+	[CiudadNacimiento] [varchar](100) NULL,
+	[Telefono] [varchar](20) NULL,
+	[Direccion] [varchar](100) NULL,
+	[EPS] [varchar](100) NULL,
+	[fkJardin] [int] NULL,
+	[fkPersona] [int] NULL,
+	[Identidad] [int] NULL,
+	[Edad] [varchar](50) NULL,
+ CONSTRAINT [PK__Niño__E430F2A0A96C3606] PRIMARY KEY CLUSTERED 
+(
+	[NIUP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Persona]    Script Date: 25/06/2024 18:59:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Persona](
+	[Identificacion] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](100) NULL,
+	[Cedula] [varchar](20) NULL,
+	[Telefono] [varchar](20) NULL,
+	[Direccion] [varchar](100) NULL,
+	[Correo] [varchar](100) NULL,
+	[fkRol] [int] NULL,
+ CONSTRAINT [PK__Acudient__D6F931E468DFC652] PRIMARY KEY CLUSTERED 
+(
+	[Identificacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Rol]    Script Date: 25/06/2024 18:59:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rol](
+	[IdRol] [int] IDENTITY(1,1) NOT NULL,
+	[Rol] [varchar](20) NULL,
+ CONSTRAINT [PK__Usuario__D6F931E4D9F4D440] PRIMARY KEY CLUSTERED 
+(
+	[IdRol] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Jardin] ON 
+
+INSERT [dbo].[Jardin] ([Identificador], [Nombre], [Direccion], [Estado]) VALUES (1, N'El Sapito', N'engativa', N'En tramite')
+INSERT [dbo].[Jardin] ([Identificador], [Nombre], [Direccion], [Estado]) VALUES (2, N'Los elefantes', N'soacha', N'En Tramite')
+INSERT [dbo].[Jardin] ([Identificador], [Nombre], [Direccion], [Estado]) VALUES (11, N'Los pandas', N'suba', N'En Tramite')
+INSERT [dbo].[Jardin] ([Identificador], [Nombre], [Direccion], [Estado]) VALUES (14, N'los pandas 2', N'carrera 101 # 70-55', N'En Tramite')
+SET IDENTITY_INSERT [dbo].[Jardin] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Niño] ON 
+
+INSERT [dbo].[Niño] ([NIUP], [Nombre], [TipoSangre], [CiudadNacimiento], [Telefono], [Direccion], [EPS], [fkJardin], [fkPersona], [Identidad], [Edad]) VALUES (10, N'juan davidd', N'A-', N'bogota', N'3222465996', N'carrera 101 # 70-55', N'NUEVA EPS', 1, 7, 1031124195, N'5')
+INSERT [dbo].[Niño] ([NIUP], [Nombre], [TipoSangre], [CiudadNacimiento], [Telefono], [Direccion], [EPS], [fkJardin], [fkPersona], [Identidad], [Edad]) VALUES (11, N'carol', N'A-', N'bogota', N'3212456995', N'carrera 101 # 70-55', N'Compensar', 1, 7, 1654961456, N'4')
+INSERT [dbo].[Niño] ([NIUP], [Nombre], [TipoSangre], [CiudadNacimiento], [Telefono], [Direccion], [EPS], [fkJardin], [fkPersona], [Identidad], [Edad]) VALUES (15, N'camilo', N'0-', N'bogota', N'3222465996', N'carrera 101 # 70-55', N'NUEVA EPS', 1, 10, 165496, N'5')
+SET IDENTITY_INSERT [dbo].[Niño] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Persona] ON 
+
+INSERT [dbo].[Persona] ([Identificacion], [Nombre], [Cedula], [Telefono], [Direccion], [Correo], [fkRol]) VALUES (2, N'carol', N'1031124195', N'3222465996', N'engativa', N'carolg998488@gmail.com', 2)
+INSERT [dbo].[Persona] ([Identificacion], [Nombre], [Cedula], [Telefono], [Direccion], [Correo], [fkRol]) VALUES (3, N'angel', N'2663164123', N'1448120305', N'suba', N'angel@gmail.com', 1)
+INSERT [dbo].[Persona] ([Identificacion], [Nombre], [Cedula], [Telefono], [Direccion], [Correo], [fkRol]) VALUES (4, N'carlos', N'5616481254', N'5118101243', N'chapinero', N'carlos@gmail.com', 1)
+INSERT [dbo].[Persona] ([Identificacion], [Nombre], [Cedula], [Telefono], [Direccion], [Correo], [fkRol]) VALUES (5, N'juancho', N'4514810243', N'882615842', N'tierra grata', N'juancho@gmail.com', 3)
+INSERT [dbo].[Persona] ([Identificacion], [Nombre], [Cedula], [Telefono], [Direccion], [Correo], [fkRol]) VALUES (6, N'sara', N'5522521434', N'252525253', N'chapinero', N'sara@gmail.com', 1)
+INSERT [dbo].[Persona] ([Identificacion], [Nombre], [Cedula], [Telefono], [Direccion], [Correo], [fkRol]) VALUES (7, N'camila', N'2663164123', N'3222465996', N'soacha', N'camila@gmail.com', 1)
+INSERT [dbo].[Persona] ([Identificacion], [Nombre], [Cedula], [Telefono], [Direccion], [Correo], [fkRol]) VALUES (10, N'carolaaa', N'1448120305', N'3222465996', N'carrera 101 # 70-55', N'juancho@gmail.com', 1)
+SET IDENTITY_INSERT [dbo].[Persona] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Rol] ON 
+
+INSERT [dbo].[Rol] ([IdRol], [Rol]) VALUES (1, N'Madre Comunitaria')
+INSERT [dbo].[Rol] ([IdRol], [Rol]) VALUES (2, N'Administrador')
+INSERT [dbo].[Rol] ([IdRol], [Rol]) VALUES (3, N'Acudiente')
+SET IDENTITY_INSERT [dbo].[Rol] OFF
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__Jardin__75E3EFCF090560DB]    Script Date: 25/06/2024 18:59:58 ******/
+ALTER TABLE [dbo].[Jardin] ADD  CONSTRAINT [UQ__Jardin__75E3EFCF090560DB] UNIQUE NONCLUSTERED 
+(
+	[Nombre] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Niño]  WITH CHECK ADD  CONSTRAINT [FK_Niño_Jardin1] FOREIGN KEY([fkJardin])
+REFERENCES [dbo].[Jardin] ([Identificador])
+GO
+ALTER TABLE [dbo].[Niño] CHECK CONSTRAINT [FK_Niño_Jardin1]
+GO
+ALTER TABLE [dbo].[Niño]  WITH CHECK ADD  CONSTRAINT [FK_Niño_Persona] FOREIGN KEY([fkPersona])
+REFERENCES [dbo].[Persona] ([Identificacion])
+GO
+ALTER TABLE [dbo].[Niño] CHECK CONSTRAINT [FK_Niño_Persona]
+GO
+ALTER TABLE [dbo].[Persona]  WITH CHECK ADD  CONSTRAINT [FK_Persona_Rol] FOREIGN KEY([fkRol])
+REFERENCES [dbo].[Rol] ([IdRol])
+GO
+ALTER TABLE [dbo].[Persona] CHECK CONSTRAINT [FK_Persona_Rol]
+GO
+USE [master]
+GO
+ALTER DATABASE [icbf2] SET  READ_WRITE 
+GO

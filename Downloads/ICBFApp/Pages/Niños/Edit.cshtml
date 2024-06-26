@@ -1,0 +1,103 @@
+﻿@page
+@model ICBFApp.Pages.Niños.EditModel
+@{
+}
+<h2>Editar Niño</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" asp-for="niñoInfo.NIUP" />
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="Nombre" value="@Model.niñoInfo.Nombre">
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label" for="SelectedTipoSangre">Selecciona un Tipo de sangre</label>
+        <div class="col-sm-6">
+            <select name="TipoSangre" value="@Model.niñoInfo.TipoSangre" class="form-control">
+                <option value="">Selecciona un tipo de sangre</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="0-">O-</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Ciudad de Nacimiento</label>
+        <input type="text" class="form-control" name="CiudadNacimiento" value="@Model.niñoInfo.CiudadNacimiento">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Teléfono</label>
+        <input type="text" class="form-control" name="Telefono" value="@Model.niñoInfo.Telefono">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Edad</label>
+        <input type="text" class="form-control" name="Edad" value="@Model.niñoInfo.Edad">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Dirección</label>
+        <input type="text" class="form-control" name="Direccion" value="@Model.niñoInfo.Direccion">
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label" for="SelectedEPS">Selecciona una EPS</label>
+        <div class="col-sm-6">
+            <select name="EPS" value="@Model.niñoInfo.EPS" class="form-control">
+                <option value="">Selecciona una Eps</option>
+                <option value="NUEVA EPS">NUEVA EPS</option>
+                <option value="Compensar">Compensar</option>
+                <option value="Cafam">Cafam</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Identificación</label>
+        <input type="text" class="form-control" name="Identidad" value="@Model.niñoInfo.Identidad">
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label" for="Jardin">Seleccione un Jardín</label>
+        <div class="col-sm-6">
+            <select id="Jardin" name="Jardin" class="form-control">
+                <option value="">Seleccione un Jardín</option>
+                @foreach (var jardin in Model.jardinInfo)
+                {
+                    <option value="@jardin.Identificador">@jardin.Nombre</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label" for="Persona">Seleccione un Acudiente</label>
+        <div class="col-sm-6">
+            <select id="Persona" name="Persona" class="form-control">
+                <option value="">Seleccione una Persona</option>
+                @foreach (var persona in Model.personaInfo)
+                {
+                    <option value="@persona.Identificacion">@persona.Nombre</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a class="btn btn-secondary" href="/Niños/Index">Cancelar</a>
+    </div>
+</form>

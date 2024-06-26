@@ -1,0 +1,61 @@
+﻿@page
+@model ICBFApp.Pages.Niños.IndexModel
+@{
+}
+
+<h2>Lista de Niños</h2>
+<a class="btn btn-primary btn-sm" href="/Niños/CrearNiño">Nuevo Niño</a>
+
+
+<form method="post">
+    <button type="submit" asp-page-handler="DownloadPdf">Descargar PDF</button>
+</form>
+
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        <strong>@Model.ErrorMessage</strong>
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>NIUP</th>
+            <th>Nombre</th>
+            <th>TipoSangre</th>
+            <th>CiudadNacimiento</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+            <th>Direccion</th>
+            <th>EPS</th>
+            <th>Nombre Jardin</th>
+            <th>Nombre Acudiente</th>
+            <th>Identificacion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listNiño)
+        {
+            <tr>
+                <td>@item.NIUP</td>
+                <td>@item.Nombre</td>
+                <td>@item.TipoSangre</td>
+                <td>@item.CiudadNacimiento</td>
+                <td>@item.Telefono</td>
+                <td>@item.Edad</td>
+                <td>@item.Direccion</td>
+                <td>@item.EPS</td>
+                <td>@item.JardinNombre</td>
+                <td>@item.PersonaNombre</td>
+                <td>@item.Identidad</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Niños/Edit?NIUP=@item.NIUP">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="/Niños/Delete?NIUP=@item.NIUP">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

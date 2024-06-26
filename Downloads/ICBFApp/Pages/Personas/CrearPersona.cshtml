@@ -1,0 +1,80 @@
+﻿@page
+@model ICBFApp.Pages.Personas.CrearPersonaModel
+@{
+}
+<br>
+<h2>Agregar Nueva Persona</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label">Nombre</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Nombre" value="@Model.personaInfo.Nombre">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label">Cedula</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Cedula" value="@Model.personaInfo.Cedula">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label">Telefono</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Telefono" value="@Model.personaInfo.Telefono">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label">Direccion</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Direccion" value="@Model.personaInfo.Direccion">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label">Correo</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Correo" value="@Model.personaInfo.Correo">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label-sm col-form-label" for="Rol">Seleccione un Rol</label>
+        <div class="col-sm-6">
+            <select id="Rol" name="Rol" class="form-control">
+                <option value="">Seleccione un Rol</option>
+                @foreach (var rol in Model.rolInfo)
+                {
+                    <option value="@rol.IdRol">@rol.Rol</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Personas/Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

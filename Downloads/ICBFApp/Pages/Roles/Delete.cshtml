@@ -1,0 +1,35 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+	try
+	{
+		string IdRol = Request.Query["IdRol"];
+		string connectionString = "Data Source=WINDOW11-CAROLG\\SQLEXPRESS;Initial Catalog=icbf;Integrated Security=True;";
+		using (SqlConnection connection = new SqlConnection(connectionString))
+		{
+			connection.Open();
+			string sqlDelete = "DELETE FROM Rol WHERE IdRol = @IdRol";
+
+			using (SqlCommand command = new SqlCommand(sqlDelete, connection))
+			{
+				command.Parameters.AddWithValue("@IdRol", IdRol);
+
+				using (SqlDataReader reader = command.ExecuteReader())
+				{
+					if (reader.Read())
+					{
+						command.Parameters.AddWithValue("@IdRol", IdRol);
+						command.ExecuteNonQuery();
+					}
+				}
+			}
+		}
+	}
+	catch (Exception e)
+	{
+
+	}
+
+	Response.Redirect("/Roles/Index");
+}

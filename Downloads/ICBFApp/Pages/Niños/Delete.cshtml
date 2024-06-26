@@ -1,0 +1,28 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+    try
+    {
+        string NIUP = Request.Query["NIUP"];
+        string connectionString = "Data Source=WINDOW11-CAROLG\\SQLEXPRESS;Initial Catalog=icbf;Integrated Security=True;";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string sqlDelete = "DELETE FROM Niño WHERE NIUP = @NIUP";
+
+            using (SqlCommand command = new SqlCommand(sqlDelete, connection))
+            {
+                command.Parameters.AddWithValue("@NIUP", NIUP);
+                command.ExecuteNonQuery();
+            }
+        }
+
+       
+    }
+    catch (Exception e)
+    {
+        
+    }
+    RedirectToPage("/Niños/Index");
+}

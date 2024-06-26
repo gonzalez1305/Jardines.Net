@@ -1,0 +1,27 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+    try
+    {
+        string Identificacion = Request.Query["Identificacion"];
+        string connectionString = "Data Source=WINDOW11-CAROLG\\SQLEXPRESS;Initial Catalog=icbf;Integrated Security=True;";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string sqlDelete = "DELETE FROM Persona WHERE Identificacion = @Identificacion";
+
+            using (SqlCommand command = new SqlCommand(sqlDelete, connection))
+            {
+                command.Parameters.AddWithValue("@Identificacion", Identificacion);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception e)
+    {
+        // Puedes manejar el error aquí si es necesario
+    }
+
+    Response.Redirect("/Personas/Index");
+}
